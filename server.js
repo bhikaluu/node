@@ -4,6 +4,8 @@ const hbs =require('hbs');
 
 const app = express();
 
+const port = process.env.PORT||3000;
+
 hbs.registerPartials(__dirname+'/views/partials');
 
 hbs.registerHelper('date',()=>{
@@ -47,6 +49,6 @@ app.get('/helper',(req,res)=>{
   res.send('helper.html');
 })
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
   console.log('port 3000');
 })
